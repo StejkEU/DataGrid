@@ -74,8 +74,8 @@
 						</div>
 						<br>
 						<div class="form-group grid-operators">
-							<input type="radio" name="operator" id="grid-operator-and" value="and" checked="checked"> <label for="grid-operator-and">{_('and')}</label>
-							<input type="radio" name="operator" id="grid-operator-or" value="or"> <label for="grid-operator-or">{_('or')}</label>
+							<input type="radio" name="operator1" id="grid-operator-and" value="and" checked="checked"> <label for="grid-operator-and">{_('and')}</label>
+							<input type="radio" name="operator1" id="grid-operator-or" value="or"> <label for="grid-operator-or">{_('or')}</label>
 						</div>
 						<br>
 						<div class="form-group">
@@ -100,6 +100,39 @@
 							<label class="sr-only" for="grid-value-2">{_('Value')}</label>
 							<div class="input-group date" id="grid-datepicker2">
 								<input type="text" class="form-control" data-date-format="{$js_date}" id="grid-value-2" placeholder="{_('Value')}">
+								<span class="input-group-addon">
+									<span class="glyphicon glyphicon-calendar"></span>
+								</span>
+							</div>
+						</div>
+                                                <br>
+						<div class="form-group grid-operators">
+							<input type="radio" name="operator2" id="grid-operator-and" value="and" checked="checked"> <label for="grid-operator-and">{_('and')}</label>
+							<input type="radio" name="operator2" id="grid-operator-or" value="or"> <label for="grid-operator-or">{_('or')}</label>
+						</div>
+						<br>
+                                                <div class="form-group">
+							<label class="sr-only" for="grid-how-3"></label>
+							<select id="grid-how-3" class="form-control">
+								<option></option>
+								<option value="equal_to">{_('Equal to')}</option>
+								<option value="not_equal_to">{_('Not equal to')}</option>
+								<option value="bigger">{_('Is greater than')}</option>
+								<option value="not_bigger">{_('Is no greater than')}</option>
+								<option value="smaller">{_('Is smaller than')}</option>
+								<option value="not_smaller">{_('Is no smaller than')}</option>
+								<option value="start_with">{_('Starts with')}</option>
+								<option value="not_start_with">{_('Not starts with')}</option>
+								<option value="end_with">{_('Ends with')}</option>
+								<option value="not_end_with">{_('Not ends with')}</option>
+								<option value="equal">{_('Contains')}</option>
+								<option value="not_equal">{_('Not contains')}</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label class="sr-only" for="grid-value-3">{_('Value')}</label>
+							<div class="input-group date" id="grid-datepicker2">
+								<input type="text" class="form-control" data-date-format="{$js_date}" id="grid-value-3" placeholder="{_('Value')}">
 								<span class="input-group-addon">
 									<span class="glyphicon glyphicon-calendar"></span>
 								</span>

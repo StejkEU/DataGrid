@@ -219,13 +219,22 @@ class NetteDbDataSource implements IDataSource
         if (!empty($custom['how2']) && !empty($custom['val2'])) {
             $values[] = $this->customFilter($column_name, $custom['how2'], $custom['val2'], $type);
         }
-        if (count($values) === 2) {
-            if ($custom['operator'] === 'and') {
-                $operator = 'AND';
+        if (!empty($custom['how3']) && !empty($custom['val3'])) {
+            $values[] = $this->customFilter($column_name, $custom['how3'], $custom['val3'], $type);
+        }
+        if (count($values) >= 2) {
+            if ($custom['operator1'] === 'and') {
+                $operator1 = 'AND';
             } else {
-                $operator = 'OR';
+                $operator1 = 'OR';
             }
-            $parameters = array('(' . $values[0][0] . ' ' . $operator . ' ' . $values[1][0] . ')', $values[0][1], $values[1][1]);
+            
+            if ($custom['operator2'] === 'and') {
+                $operator2 = 'AND';
+            } else {
+                $operator2 = 'OR';
+            }
+            $parameters = array('(' . $values[0][0] . ' ' . $operator1 . ' ' . $values[1][0] . ' ' . $operator2 . ' ' . $values[2][0]. ')', $values[0][1], $values[1][1], $values[2][1]);
         } else {
             $parameters = array($values[0][0], $values[0][1]);
         }
